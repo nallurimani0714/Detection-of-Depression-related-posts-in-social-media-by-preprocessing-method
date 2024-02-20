@@ -1,0 +1,87 @@
+#console{
+    display: none;
+    margin-top: 4%;
+}
+.bg-dark {
+    background-color: #343a40!important;
+}
+#consolearea textarea{
+    background-color: #495057;
+    color: white;
+    height: 400px;
+    font-family: "Lucida Console", "Lucida Sans Typewriter", "Bitstream Vera Sans Mono", monospace;
+}
+
+#mainNav.navbar-dark .navbar-collapse .navbar-sidenav {
+    background: #495057;
+}
+#profile-icon{
+    width: 20px;
+    margin-right: 2.8%;
+
+}
+#mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item > .nav-link {
+    color: white;
+}
+#navbarResponsive > ul.navbar-nav.ml-auto > li:nth-child(1){
+    width: 80px;
+}
+#profile-name{
+    margin-left: 4%;
+}
+.nav-link-text{
+    font-size: 1.4em;
+}
+#page-top > div > div > div:nth-child(2) > div:nth-child(1) > div{
+    background-color: #721c24!important;
+}
+#page-top > div > div > div:nth-child(2) > div:nth-child(2) > div{
+    background-color: #17a2b8!important;
+}
+#page-top > div > div > div:nth-child(2) > div:nth-child(3) > div{
+    background-color: #155724!important;
+}
+#page-top > div > div > div:nth-child(2) > div:nth-child(4) > div{
+    background-color: #212529!important;
+}
+.navbar-sidenav .nav-item{
+    margin-top: 20%;
+    
+    
+}
+.btn{
+    padding:1%;
+    float: right;
+    margin-bottom: 2%;
+    width: 8%;
+}
+.dropzone .dz-preview.dz-file-preview .dz-image {
+    border-radius: 20px;
+    background: #dc3545;
+   
+}
+#dropmehere,#encryptbtn{
+    display: block;
+}
+
+#generatebtn{
+margin-top: 2%;
+}
+#generatebtn,#attr{
+    display: none;
+}
+a{
+    cursor: pointer;
+}
+#encryptbtn{
+        margin-top: 20px;
+}
+.content-wrapper {
+   
+}
+.card{
+    border-radius:0;
+}
+.navbar-brand{
+    font-size: 0.9em;
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>MSDSN</title>
+      <!-- Bootstrap Core CSS -->
+      <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
+      <!-- Custom CSS -->
+      <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+      <!-- Custom Fonts -->
+      <link href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.10.0/css/alertify.min.css"/>
+      <!-- Default theme -->
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.10.0/css/themes/default.min.css"/>
+      <!-- Semantic UI theme -->
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.10.0/css/themes/semantic.min.css"/>
+      <!-- Bootstrap theme -->
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.10.0/css/themes/bootstrap.min.css"/>
+      <![endif]-->
+      <style>
+         .dropdown:hover .dropdown-menu {
+         display: block;
+         }
+         .navbar-nav > li {
+         top: -2px;
+         }
+         .navbar-nav > li > a:hover {
+         border-top: 2px solid #F68220;
+         }
+         .carousel-control.right,.carousel-control.left{
+         background-image: none;
+         }
+         .navbar-inverse {
+         background-color: rgb(255, 255, 255);
+         border-color: transparent;
+         }
+         body > div > form > h2{
+         color:black;
+         }
+         body > div{
+         }
+         form{
+         width:90%;
+         }
+         input{
+         margin-bottom: 4%;
+         }
+         .form-signin-heading{
+         text-align: center;
+         margin-bottom: 12%;
+         color:black;
+         font-family: 'Montserrat', sans-serif;
+         }
+         button{
+         margin-top:4%;
+         }
+         footer{
+         font-family: 'Montserrat', sans-serif;
+         margin:0px;
+         background-color: #063374;
+         color:white;
+         padding:0.5%;
+         font-size: 1.2em;
+         }
+         body > footer > div > div > p{
+         text-align: center;
+         }
+         .container{
+         height: 520px;
+         margin-top:1%;
+         padding: 2%;
+         }
+         button{
+         margin-top:9%;
+         background-color: #a75916;
+         color:white;
+         height: 48px;
+         }
+         button:hover{
+         background-color: #6d3a0d;
+         }
+         .form-signin input{
+         background-color: #ce9a7d;
+         color:white;
+         }
+         .navbar{
+             height: 80px
+             }
+             .badge{
+               padding:1%;
+               font-size:1em;
+             }
+             #pred{
+               text-align: center;
+             }
+            .card{
+                   background: white;
+    padding: 2%;
+            }
+      </style>
+     <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+   </head>
+   <body>
+      <nav class="navbar navbar-default">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <a style="    width: 1200px;    margin-left: 2%;"  class="navbar-brand" href="#"><span>MSDSN<span></a>
+            </div>
+
+         </div>
+      </nav>
+      <!-- Page Content -->
+      <div class="container">
+
+         <a type="button" class="btn btn-primary" href="collect">Data Collection</a>
+         <a type="button" class="btn btn-primary" href="preprocess">Preprocess</a>
+         <a type="button" class="btn btn-primary" href="train">Training</a>
+         <a type="button" class="btn btn-primary" href="predict">Predict</a>
+    <hr>
+   {% if data is defined %}
+              {{ data.to_html(classes="table table-striped") | safe}}
+      {% endif %}
+           {% if data2 is defined %}
+            {{ data2.to_html(classes="table table-striped") | safe}}
+
+            <h2> Labels : {{ la}} </h2>
+         {% endif %}
+
+        
+        {% if s is defined %}
+         Trained Successfully
+          Trained Accuracy :     {{ s }}
+         {% endif %}
+
+         <h2 style="text-align: center;margin-bottom: 4%">Prediction Step - 4</h2>
+          
+         {% if p is defined %}
+         <div class="card">  
+            <div class="card-body">
+           <h1 id="pred">Prediction  : <span class="badge red">{{ p }} </span></h1>
+           </div>
+           <center style="    margin-top: 6%;"><h2> Confusion Matrix</h2>
+           <img src="{{ url_for('static', filename='img/graph.png') }}"/></center>
+      </div>
+         {% endif %}
+      
+         <div class="row" style="margin-bottom:6%">
+        
+           <div class="col-sm-6" style="padding-left:10%">
+        
+    
+           </div>
+         </div>
+
+
+      <script src="//cdn.jsdelivr.net/alertifyjs/1.10.0/alertify.min.js"></script>
+
+         <script src="{{ url_for('static', filename='js/Main.js') }}"></script>
+         <script src="{{ url_for('static', filename='js/Login.js') }}"></script>
+
+      </div>
+   </body>
+</html>
